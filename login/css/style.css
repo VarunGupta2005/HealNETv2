@@ -204,6 +204,42 @@ body{
     font-weight: 500;
 }
 
+/* Alert Box Styles */
+.auth-alert {
+    position: absolute; /* Position relative to the wrapper */
+    top: 10px; /* Position it near the top */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 1000;
+    min-width: 250px; /* Minimum width */
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-alert.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.auth-alert.success {
+    background-color: #d1e7dd; /* Bootstrap success background */
+    color: #0f5132; /* Bootstrap success text */
+    border: 1px solid #badbcc;
+}
+
+.auth-alert.error {
+    background-color: #f8d7da; /* Bootstrap danger background */
+    color: #842029; /* Bootstrap danger text */
+    border: 1px solid #f5c2c7;
+}
+
 /* RESPONSIVE STYLES */
 @media only screen and (max-width: 564px){
     .wrapper{
