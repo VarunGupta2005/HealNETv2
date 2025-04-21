@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const hospitalSelect = document.getElementById('hospital');
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const listItem = document.createElement('li');
                 listItem.textContent = hospital;
                 listItem.style.cursor = 'pointer';
-                listItem.addEventListener('click', function() {
+                listItem.addEventListener('click', function () {
                     selectedHospital = this.textContent;
                     hospitalSearchInput.value = this.textContent;
                     hospitalSearchResults.innerHTML = '';
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
     serviceSelect.addEventListener('change', updateButtonState);
     dateInput.addEventListener('input', updateButtonState);
 
-    bookButton.addEventListener('click', function() {
+    bookButton.addEventListener('click', function () {
         if (validateForm()) {
             const name = nameInput.value;
             const email = emailInput.value;
@@ -121,15 +121,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    closeConfirmationButton.addEventListener('click', function() {
+    closeConfirmationButton.addEventListener('click', function () {
         bookingConfirmationDiv.classList.add('hidden');
     });
 
-    closeConfirmationOnlyButton.addEventListener('click', function() {
+    closeConfirmationOnlyButton.addEventListener('click', function () {
         bookingConfirmationDiv.classList.add('hidden');
     });
 
-    document.getElementById('view-hospital-info').addEventListener('click', function() {
+    document.getElementById('view-hospital-info').addEventListener('click', function () {
         const selectedHospitalForInfo = selectedHospital;
         bookingConfirmationDiv.classList.add('hidden'); // Hide the dialog
         alert(`Navigating to information page for ${selectedHospitalForInfo}... (This is a placeholder)`);

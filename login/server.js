@@ -7,7 +7,6 @@ const path = require('path');
 
 // Import routes
 const authRoutes = require('./routes/auth');
-const hospitalRoutes = require('./routes/hospitals');
 
 // Initialize express
 const app = express();
@@ -36,7 +35,6 @@ app.use('/blog', express.static(path.join(__dirname, '..', 'Blog')));
 
 // --- API Routes ---
 app.use('/api/auth', authRoutes);
-app.use('/api/hospitals', hospitalRoutes);
 
 // --- Page Routes ---
 
