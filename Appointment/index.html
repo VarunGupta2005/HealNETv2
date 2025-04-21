@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealNET Appointment Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+    <header>
+        <a href="../healnet_main.html"><h1><span class="healnet-accent">HealNET</span></h1></a>
+        <p><i>Simply Systems, Amplify Care</i></p>
+    </header>
+
+    <main>
+        <section id="appointment-form">
+            <h2>Book Your Appointment</h2>
+            <div id="new-patient-section">
+                <h3>Patient Information</h3>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required><br><br>
+            </div>
+
+            <label for="hospital">Select Hospital:</label>
+            <select id="hospital" required>
+                <option value="">-- Select a Hospital --</option>
+                <option value="city_hospital">City General Hospital</option>
+                <option value="metro_clinic">Metro Medical Clinic</option>
+                <option value="sunrise_health">Sunrise Health Center</option>
+                <option value="premier_med">Premier Medical Institute</option>
+                <option value="carewell_hospital">CareWell Hospital</option>
+                <option value="global_healthplex">Global Healthplex</option>
+                <option value="apollo_prime">Apollo Prime Healthcare</option>
+                <option value="lifeline_medical">Lifeline Medical Center</option>
+                <option value="unity_hospital">Unity Community Hospital</option>
+                <option value="peak_health">Peak Health Solutions</option>
+                <option value="other">Other (Search below)</option>
+            </select><br><br>
+
+            <div id="hospital-search-container" class="hidden">
+                <label for="hospital-search">Search Hospital:</label>
+                <input type="text" id="hospital-search" placeholder="Enter hospital name">
+                <p id="hospital-search-results"></p>
+            </div>
+
+            <label for="service">Select Service:</label>
+            <select id="service" required>
+                <option value="">-- Select a Service --</option>
+                <option value="general_checkup">General Check-up</option>
+                <option value="cardiology">Cardiology Consultation</option>
+                <option value="dermatology">Dermatology Check-up</option>
+                <option value="pediatrics">Pediatric Consultation</option>
+                <option value="orthopedics">Orthopedic Consultation</option>
+                <option value="radiology">Radiology (X-ray, MRI, CT Scan)</option>
+                <option value="gynecology">Gynecology Services</option>
+                <option value="physiotherapy">Physiotherapy Sessions</option>
+                <option value="neurology">Neurology Consultation</option>
+                <option value="urology">Urology Services</option>
+                <option value="ophthalmology">Ophthalmology (Eye Check-up)</option>
+                <option value="dental">Dental Services</option>
+                <option value="ent">ENT (Ear, Nose, and Throat)</option>
+
+            </select><br><br>
+
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" required><br><br>
+            <a href="../login/index.html" target="_blank">
+            <button id="book-button" disabled>Book Appointment</button></a>
+
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HealNET</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
