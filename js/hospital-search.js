@@ -98,8 +98,8 @@ function performHospitalSearch() {
       }
     }
 
-    // Redirect with search parameters
-    window.location.href = `/hospital-search.html?search=${encodeURIComponent(searchQuery)}${facilityParam}`;
+    // Redirect with search parameters - Fix the URL to use /search consistently
+    window.location.href = `/search?search=${encodeURIComponent(searchQuery)}${facilityParam}`;
   }
 }
 
@@ -125,13 +125,13 @@ function applyFilters() {
   }
 
   // Reload the page with new filters
-  window.location.href = `hospital-search.html${queryString}`;
+  window.location.href = `/search${queryString}`;
 }
 
 // Reset all filters
 function resetFilters() {
   const searchQuery = $('#searchTerm').text();
-  window.location.href = `hospital-search.html?search=${encodeURIComponent(searchQuery)}`;
+  window.location.href = `/search?search=${encodeURIComponent(searchQuery)}`;
 }
 
 // Load hospitals from API based on search criteria
