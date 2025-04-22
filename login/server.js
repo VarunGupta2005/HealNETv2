@@ -7,6 +7,7 @@ const path = require('path');
 
 // Import routes
 const authRoutes = require('./routes/auth');
+const hospitalRoutes = require('./routes/hospitals');
 
 // Initialize express
 const app = express();
@@ -35,6 +36,7 @@ app.use('/blog', express.static(path.join(__dirname, '..', 'Blog')));
 
 // --- API Routes ---
 app.use('/api/auth', authRoutes);
+app.use('/api/hospitals', hospitalRoutes);
 
 // --- Page Routes ---
 
@@ -72,6 +74,14 @@ app.get('/appointment', (req, res) => {
 // Serve assets for the Appointment page
 app.use('/appointment', express.static(path.join(__dirname, '..', 'Appointment')));
 
+app.use('/search', express.static(path.join(__dirname, '..', 'hospital-search.html')));
+
+app.use('/search', express.static(path.join(__dirname, '..', 'js')));
+
+// Route for the search page
+app.get('/search', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'hospital-search.html'));
+});
 
 // --- Database Connection ---
 // Make sure MONGO_URI is set in your .env file
@@ -79,6 +89,11 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB Connected Successfully'))
   .catch(err => console.error('MongoDB Connection Error:', err));
 
+// --- Error Handling ---
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Internal Server Error' });
+});
 
 // --- Start Server ---
 const PORT = process.env.PORT || 5000; // Use port from .env or default to 5000

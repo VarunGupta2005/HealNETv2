@@ -27,7 +27,7 @@ const sendTokenResponse = (user, statusCode, res) => {
       success: true,
       token // Also send token in response body (optional, but useful for frontend)
     });
-  res.redirect('localhost://'); // Redirect to the home page after login or registration
+
 };
 
 // --- Routes ---
